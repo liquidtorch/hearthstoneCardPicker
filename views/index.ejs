@@ -16,6 +16,16 @@
     <h1>Card Stacks</h1>
     <hr>
     <h3>My Cards</h3>
+    <% for (let i = 0; i < deck.length; i++){%>
+      <hr>
+      <div class="">
+        <h6><%= deck[i].description %></h6>
+        <p>Mana: <%= deck[i].mana %></p>
+        <p>Attack: <%= deck[i].attack %></p>
+        <p>Health: <%= deck[i].health %></p>
+        <a href="/cards/remove/<%=cards[i].id%>">Remove from My Cards</a>
+      </div>
+    <% } %>
     <hr>
     <h3>All Cards</h3>
     <% for (let i = 0; i < cards.length; i++){%>
@@ -25,7 +35,7 @@
         <p>Mana: <%= cards[i].mana %></p>
         <p>Attack: <%= cards[i].attack %></p>
         <p>Health: <%= cards[i].health %></p>
-        <a href="#">+ My Cards</a>
+        <a href="/cards/add/<%= cards[i].id %>">+ My Cards</a>
       </div>
     <% } %>
   </body>
